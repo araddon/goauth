@@ -81,7 +81,10 @@ func (r *TimeoutReaderCloser) Read(b []byte) (int, error) {
 		return size, err
 	}
 	t := time.Now().Add(time.Duration(r.T))
-	r.C.SetReadDeadline(t)
+
+	if r.T > 0 {
+		r.C.SetReadDeadline(t)
+	}
 	return size, err
 }
 
