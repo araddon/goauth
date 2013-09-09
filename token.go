@@ -3,16 +3,16 @@ package oauth
 import ()
 
 type RequestToken struct {
-	Token    string
-	Secret   string
-	Verifier string
+	Token    string `json:"token"`
+	Secret   string `json:"secret"`
+	Verifier string `json:"verifier"`
 }
 
 type AccessToken struct {
-	Id       string
-	Token    string
-	Secret   string
-	UserRef  string
-	Verifier string
-	Service  string
+	Id       string `json:"id"`
+	Token    string `json:"token"`
+	Secret   string `json:"secret"`
+	UserRef  string `json:"userref"`
+	Verifier string `json:"verifier"`
+	Service  string `json:"service"`
 }
