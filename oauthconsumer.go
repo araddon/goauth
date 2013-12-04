@@ -155,7 +155,7 @@ func (oc *OAuthConsumer) GetRequestAuthorizationURL() (string, *RequestToken, er
 
 // GetAccessToken gets the access token for the response from the Authorization URL
 func (oc *OAuthConsumer) GetAccessToken(token string, verifier string) *AccessToken {
-	var rt *RequestToken
+	rt := &RequestToken{}
 
 	// Match the RequestToken by Token
 	for i := range oc.requestTokens {
